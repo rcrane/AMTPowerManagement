@@ -67,7 +67,7 @@ def hard_reset(targetip:str = "", port:str = "16992", password:str = "", usernam
         return
 
     if(password == ""):
-        print("You need to provide the parameter targetip!")
+        print("You need to provide the parameter password!")
         return
 
     command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --input - invoke --method "
@@ -84,7 +84,7 @@ def power_down(targetip:str = "", port:str = "16992", password:str = "", usernam
         return
 
     if(password == ""):
-        print("You need to provide the parameter targetip!")
+        print("You need to provide the parameter password!")
         return
 
     command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --input - invoke --method "
@@ -100,7 +100,7 @@ def power_up(targetip:str = "", port:str = "16992", password:str = "", username:
         return
     
     if(password == ""):
-        print("You need to provide the parameter targetip!")
+        print("You need to provide the parameter password!")
         return
 
     command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --input - invoke --method "
@@ -116,7 +116,7 @@ def set_boot_from_disk(targetip:str = "", port:str = "16992", password:str = "",
         return
     
     if(password == ""):
-        print("You need to provide the parameter targetip!")
+        print("You need to provide the parameter password!")
         return
 
     command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --input - invoke --method "
@@ -132,7 +132,7 @@ def set_boot_from_network(targetip:str = "", port:str = "16992", password:str = 
         return
 
     if(password == ""):
-        print("You need to provide the parameter targetip!")
+        print("You need to provide the parameter password!")
         return
 
     command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --input - invoke --method "
