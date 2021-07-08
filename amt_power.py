@@ -60,6 +60,20 @@ wsman_power_method = ''' 'RequestPowerStateChange' 'http://schemas.dmtf.org/wbem
 
 
 
+def get_power_state(targetip:str = "", port:str = "16992", password:str = "", username:str = "admin"):
+    if(targetip == ""):
+        print("You need to provide the parameter targetip!")
+        return
+
+    if(password == ""):
+        print("You need to provide the parameter password!")
+        return
+
+    command = "wsman --port " + port + " --hostname " + targetip + " --username " + username + " --password " + password + " --noverifypeer --noverifyhost --optimize --encoding utf-8 enumerate 'http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_AssociatedPowerManagementService'"
+    print(command)
+    subprocess.call(command , shell=True)
+    # Look for that line: <h:PowerState>X</h:PowerState>
+    return
 
 def hard_reset(targetip:str = "", port:str = "16992", password:str = "", username:str = "admin"):
     if(targetip == ""):
